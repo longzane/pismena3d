@@ -1,151 +1,182 @@
 <!doctype html>
 <html lang="cs">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PISMENA 3D .cz | Světelné 3D nápisy a reklamní značení</title>
-  <meta name="description" content="Výroba světelných 3D nápisů, reklamních cedulí, LED log a firemního značení na míru v České republice." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0f0f0f;
-      --bg2:#171717;
-      --card:#1d1d1d;
-      --text:#f5f5f5;
-      --muted:#a7a7a7;
-      --gold:#d4af37;
-      --gold2:#ffcf45;
-      --line:rgba(212,175,55,.26);
-      --whiteLine:rgba(255,255,255,.09);
-      --shadow:0 22px 70px rgba(0,0,0,.55);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Montserrat,Arial,sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(circle at 78% 10%, rgba(212,175,55,.18), transparent 28%),
-        radial-gradient(circle at 10% 0%, rgba(255,255,255,.07), transparent 22%),
-        linear-gradient(180deg,#0b0b0b 0%,#141414 45%,#0d0d0d 100%);
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{width:min(1180px, calc(100% - 42px));margin:auto}
-    header{
-      position:sticky;top:0;z-index:10;
-      backdrop-filter: blur(18px);
-      background:rgba(10,10,10,.72);
-      border-bottom:1px solid var(--whiteLine);
-    }
-    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:13px;font-weight:900;letter-spacing:.04em}
-    .brand-mark{width:46px;height:46px;border-radius:12px;background:linear-gradient(145deg,#fff,#777);box-shadow:0 0 28px rgba(212,175,55,.35);display:grid;place-items:center;color:#111;font-weight:900}
-    .brand span b{color:var(--gold2);font-size:1.15em;text-shadow:0 0 16px rgba(212,175,55,.75)}
-    nav{display:flex;gap:26px;color:#d7d7d7;font-size:14px;font-weight:600}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 20px;border-radius:999px;font-weight:800;border:1px solid var(--line);background:linear-gradient(135deg,var(--gold),#8f6b12);color:#111;box-shadow:0 0 30px rgba(212,175,55,.24)}
-    .btn.secondary{background:transparent;color:var(--text);box-shadow:none;border-color:var(--whiteLine)}
-    .hero{padding:86px 0 58px;position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center}
-    .eyebrow{color:var(--gold2);letter-spacing:.24em;font-size:12px;font-weight:800;text-transform:uppercase;margin-bottom:18px}
-    h1{font-size:clamp(42px,6.8vw,86px);line-height:.94;margin:0 0 22px;font-weight:900;letter-spacing:-.06em;text-transform:uppercase}
-    h1 .gold{color:#fff;text-shadow:0 0 22px rgba(212,175,55,.65),0 0 55px rgba(212,175,55,.32)}
-    .lead{font-size:18px;line-height:1.8;color:#d2d2d2;max-width:620px;margin:0 0 30px}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:640px}
-    .stat{border:1px solid var(--whiteLine);background:rgba(255,255,255,.035);padding:18px;border-radius:18px}
-    .stat strong{display:block;font-size:25px;color:#fff}.stat span{font-size:13px;color:var(--muted)}
-    .logo-panel{position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:#111}
-    .logo-panel img{width:100%;display:block;filter:saturate(1.06) contrast(1.05)}
-    .logo-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.05),transparent 45%,rgba(212,175,55,.08));pointer-events:none}
-    section{padding:78px 0;border-top:1px solid var(--whiteLine)}
-    .section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:34px}
-    h2{font-size:clamp(30px,4vw,52px);line-height:1;margin:0;font-weight:900;letter-spacing:-.04em;text-transform:uppercase}.section-head p{max-width:520px;color:var(--muted);line-height:1.7;margin:0}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));border:1px solid var(--whiteLine);border-radius:24px;padding:28px;min-height:220px}.icon{width:54px;height:54px;border-radius:16px;background:rgba(212,175,55,.12);border:1px solid var(--line);display:grid;place-items:center;color:var(--gold2);font-weight:900;font-size:22px;margin-bottom:22px;box-shadow:0 0 30px rgba(212,175,55,.12)}
-    h3{margin:0 0 12px;font-size:21px}.card p{margin:0;color:#bdbdbd;line-height:1.7;font-size:15px}
-    .showcase{display:grid;grid-template-columns:1fr .86fr;gap:24px;align-items:stretch}.showcase-img{border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#101010}.showcase-img img{width:100%;height:100%;object-fit:cover;display:block}.process{display:grid;gap:14px}.step{display:flex;gap:18px;padding:21px;border:1px solid var(--whiteLine);border-radius:22px;background:rgba(255,255,255,.035)}.num{flex:0 0 42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#111;font-weight:900}.step strong{display:block;margin-bottom:6px}.step span{color:var(--muted);line-height:1.55;font-size:14px}
-    .cta{padding:72px;border-radius:32px;background:linear-gradient(135deg,rgba(212,175,55,.16),rgba(255,255,255,.045) 52%,rgba(0,0,0,.45)),#171717;border:1px solid var(--line);box-shadow:var(--shadow);text-align:center}.cta h2{margin-bottom:18px}.cta p{color:#d0d0d0;line-height:1.7;max-width:720px;margin:0 auto 26px}
-    footer{padding:38px 0;color:#999;border-top:1px solid var(--whiteLine)}.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}.gold-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.8;margin:22px 0}
-    @media(max-width:900px){nav{display:none}.hero-grid,.showcase{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:16px}.cta{padding:42px 22px}.hero{padding-top:54px}}
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Reklama Nhất Trí CZ | Světelná reklama Praha a Evropa</title>
+  <meta name="description" content="Nhất Trí s.r.o. navrhuje, vyrábí a montuje reklamní cedule, 3D písmena, světelné boxy, LED reklamu a tisk pro vietnamské podnikatele v Česku a Evropě.">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#top" aria-label="PISMENA 3D">
-        <div class="brand-mark">3D</div><span>PISMENA <b>3D</b>.CZ</span>
-      </a>
-      <nav>
-        <a href="#sluzby">Služby</a><a href="#realizace">Realizace</a><a href="#postup">Postup</a><a href="#kontakt">Kontakt</a>
-      </nav>
-      <a class="btn" href="mailto:info@pismena3d.cz">Nezávazná poptávka</a>
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <img src="assets/img/logo.svg" alt="Logo Quảng cáo Nhất Trí CZ">
+    </a>
+    <nav class="nav" aria-label="Hlavní navigace">
+      <a class="nav-cta" href="#video" data-i18n="navVideo">Ukázky</a>
+      <a href="#lien-he" data-i18n="navContact">Kontakt</a>
+    </nav>
+    <div class="language-switch" aria-label="Language switcher">
+      <button type="button" class="lang-btn active" data-lang="cs">CZ</button>
+      <button type="button" class="lang-btn" data-lang="vi">VI</button>
     </div>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" data-i18n="heroEyebrow">Návrh · výroba · montáž reklamních cedulí</p>
+        <h1 data-i18n-html="heroTitle">Pismena<span class="grad-text hero-3d">3D</span>.cz</h1><p class="hero-byline" data-i18n="heroByline">od Nhat Tri s.r.o.</p>
+        <h3 class="hero-subtitle" data-i18n-html="heroSubtitle">Výrazné, svítivé a profesionální cedule pro podnikatele v Evropě.</h3>
+        <p class="lead" data-i18n="heroLead">Nhất Trí pomáhá majitelům restaurací, nehtových salonů, potravin, bister, obchodů a firmám v Česku i Evropě: od konzultace a návrhu až po výrobu a montáž 3D písmen, světelných boxů, LED reklamy, polepů a tisku.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="https://www.facebook.com/www.quangcao.cz" target="_blank" rel="noopener" data-i18n="callButton">Napsat na Facebook</a>
+          <a class="btn ghost" href="https://www.facebook.com/www.quangcao.cz" target="_blank" rel="noopener" data-i18n="fanpageButton">Zobrazit fanpage</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <iframe class="fb-page-frame" title="Fanpage Quảng Cáo Nhất Trí CZ" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz&tabs=timeline&width=500&height=560&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+      </aside>
+    </section>
+
+    <section class="section compact">
+      <p class="section-kicker" data-i18n="introKicker">Krátké představení</p>
+      <h2 data-i18n="introTitle">Děláme reklamu, která je dobře vidět, snadno zapamatovatelná a sedí evropským provozovnám.</h2>
+      <p data-i18n="introText">Zaměřujeme se na produkty, které jsou čitelné, hezky svítí, vydrží a odpovídají stylu konkrétního oboru. Se zákazníky komunikujeme česky i vietnamsky, rychle přes Facebook a ukazujeme reálná produktová videa před rozhodnutím.</p>
+    </section>
+
+    <section id="video" class="section">
+      <div class="section-head">
         <div>
-          <div class="eyebrow">Světelné 3D nápisy na míru</div>
-          <h1>Vaše značka<br><span class="gold">ve světle</span></h1>
-          <p class="lead">Navrhujeme, vyrábíme a instalujeme reklamní 3D písmena, LED loga, světelné boxy a firemní značení pro obchody, kanceláře, restaurace i showroomy v celé České republice.</p>
-          <div class="hero-actions">
-            <a class="btn" href="#kontakt">Chci cenovou nabídku</a>
-            <a class="btn secondary" href="#realizace">Ukázky práce</a>
-          </div>
-          <div class="stats">
-            <div class="stat"><strong>3D LED</strong><span>světelná písmena</span></div>
-            <div class="stat"><strong>Na míru</strong><span>design i výroba</span></div>
-            <div class="stat"><strong>CZ</strong><span>servis pro český trh</span></div>
-          </div>
+          <p class="section-kicker" data-i18n="videoKicker">Facebook Reels</p>
+          <h2 data-i18n="videoTitle">Video produktů a průběhu výroby</h2>
         </div>
-        <div class="logo-panel"><img src="pismena3d-logo.png" alt="PISMENA 3D logo" /></div>
+        <a class="link-more" href="https://www.facebook.com/www.quangcao.cz/reels/" target="_blank" rel="noopener" data-i18n="openReels">Otevřít Reels</a>
+      </div>
+
+      <div class="video-grid">
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F1027480563568813%2F&show_text=false&width=360" title="Video Nhất Trí CZ #01" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F26699423079679309%2F&show_text=false&width=360" title="Video Nhất Trí CZ #02" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F1649212173080106%2F&show_text=false&width=360" title="Video Nhất Trí CZ #03" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F1539457147070828%2F&show_text=false&width=360" title="Video Nhất Trí CZ #04" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F2856932977834121%2F&show_text=false&width=360" title="Video Nhất Trí CZ #05" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F1380964190181493%2F&show_text=false&width=360" title="Video Nhất Trí CZ #06" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F4334179686822169%2F&show_text=false&width=360" title="Video Nhất Trí CZ #07" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F676913851995250%2F&show_text=false&width=360" title="Video Nhất Trí CZ #08" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F714413254278939%2F&show_text=false&width=360" title="Video Nhất Trí CZ #09" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F1511663253131096%2F&show_text=false&width=360" title="Video Nhất Trí CZ #10" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F884131494227462%2F&show_text=false&width=360" title="Video Nhất Trí CZ #11" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F1466580265042057%2F&show_text=false&width=360" title="Video Nhất Trí CZ #12" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F2137502453322465%2F&show_text=false&width=360" title="Video Nhất Trí CZ #13" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2170466126823005&show_text=false&width=360" title="Video Nhất Trí CZ #14" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D814851481278774&show_text=false&width=360" title="Video Nhất Trí CZ #15" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F924174190357916%2F&show_text=false&width=360" title="Video Nhất Trí CZ #16" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F174458205743898%2F&show_text=false&width=360" title="Video Nhất Trí CZ #17" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F9087700727951507&show_text=false&width=360" title="Video Nhất Trí CZ #18" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F998658989487900%2F&show_text=false&width=360" title="Video Nhất Trí CZ #19" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwww.quangcao.cz%2Fvideos%2F1445022460548839%2F&show_text=false&width=360" title="Video Nhất Trí CZ #20" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1176031714402892&show_text=false&width=360" title="Video Nhất Trí CZ #21" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1139099261077289&show_text=false&width=360" title="Video Nhất Trí CZ #22" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D815771307705862&show_text=false&width=360" title="Video Nhất Trí CZ #23" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1124532663140053&show_text=false&width=360" title="Video Nhất Trí CZ #24" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
+        <article class="video-card"><div class="video-frame"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D737782605808869&show_text=false&width=360" title="Video Nhất Trí CZ #25" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div></article>
       </div>
     </section>
 
-    <section id="sluzby">
-      <div class="wrap">
-        <div class="section-head"><h2>Co vyrábíme</h2><p>Kompletní reklamní značení od návrhu po montáž. Důraz na čistý design, kvalitní materiály a výrazný večerní efekt.</p></div>
-        <div class="cards">
-          <article class="card"><div class="icon">LED</div><h3>Světelná 3D písmena</h3><p>Plastická písmena s vnitřním nebo zadním LED podsvícením pro fasády, recepce a interiéry.</p></article>
-          <article class="card"><div class="icon">BOX</div><h3>Světelné boxy</h3><p>Elegantní reklamní panely pro prodejny, restaurace a provozovny s vysokou viditelností.</p></article>
-          <article class="card"><div class="icon">LOGO</div><h3>Firemní loga a značení</h3><p>Výroba logotypů, orientačních systémů a reklamních cedulí v jednotném stylu vaší značky.</p></article>
+    <section id="lien-he" class="section contact">
+      <div class="contact-card">
+        <div>
+          <p class="section-kicker" data-i18n="contactKicker">Kontakt</p>
+          <h2 data-i18n="contactTitle">Chcete reklamu pro svoji provozovnu?</h2>
+          <p data-i18n="contactText">Pošlete nám fotku místa, rozměry a představu přes fanpage. Ozveme se s rychlou konzultací.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="realizace">
-      <div class="wrap">
-        <div class="section-head"><h2>Prémiový vzhled<br>pro váš provoz</h2><p>Tmavý podklad, bílé 3D písmo a teplé zlaté světlo vytváří luxusní a profesionální dojem.</p></div>
-        <div class="showcase">
-          <div class="showcase-img"><img src="pismena3d-mockup.png" alt="Mockup světelného 3D značení" /></div>
-          <div class="process" id="postup">
-            <div class="step"><div class="num">1</div><div><strong>Zaměření a konzultace</strong><span>Probereme rozměr, umístění, typ podsvícení a vizuální styl.</span></div></div>
-            <div class="step"><div class="num">2</div><div><strong>Grafický návrh</strong><span>Připravíme náhled značení na fasádě nebo v interiéru.</span></div></div>
-            <div class="step"><div class="num">3</div><div><strong>Výroba</strong><span>CNC/laser řezání, LED moduly, konstrukce a finální povrchová úprava.</span></div></div>
-            <div class="step"><div class="num">4</div><div><strong>Montáž</strong><span>Instalace na místě, zapojení a kontrola výsledného světelného efektu.</span></div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontakt">
-      <div class="wrap">
-        <div class="cta">
-          <div class="eyebrow">PISMENA3D.CZ</div>
-          <h2>Chcete vidět svoji značku ve světle?</h2>
-          <p>Pošlete nám logo, rozměr a místo instalace. Připravíme orientační cenu a vizuální návrh světelného 3D nápisu.</p>
-          <a class="btn" href="mailto:info@pismena3d.cz?subject=Poptávka%20-%20světelný%203D%20nápis">info@pismena3d.cz</a>
-          <div class="gold-line"></div>
-          <p style="margin-bottom:0;color:#aaa;font-size:14px">Světelné 3D nápisy • Reklamní cedule • LED loga • Montáž v ČR</p>
-        </div>
+        <a class="btn primary" href="https://www.facebook.com/www.quangcao.cz" target="_blank" rel="noopener" data-i18n="contactButton">Napsat na Facebook</a>
       </div>
     </section>
   </main>
 
-  <footer><div class="wrap foot"><span>© 2026 PISMENA3D.CZ</span><span>Vaše značka ve světle</span></div></footer>
+  <footer class="footer">© Nhat Tri s.r.o. · Libušská 9/193, Praha · info@pismena3d.cz</footer>
+
+  <script>
+    const translations = {
+      cs: {
+        navVideo: "Ukázky",
+        navContact: "Kontakt",
+        heroEyebrow: "Návrh · výroba · montáž reklamních cedulí",
+        heroTitle: "Pismena<span class=\"grad-text hero-3d\">3D</span>.cz",
+        heroByline: "od Nhat Tri s.r.o.",
+        heroSubtitle: "Výrazné, svítivé a profesionální cedule pro podnikatele v Evropě.",
+        heroLead: "Nhất Trí pomáhá majitelům restaurací, nehtových salonů, potravin, bister, obchodů a firmám v Česku i Evropě: od konzultace a návrhu až po výrobu a montáž 3D písmen, světelných boxů, LED reklamy, polepů a tisku.",
+        callButton: "Napsat na Facebook",
+        fanpageButton: "Zobrazit fanpage",
+        introKicker: "Krátké představení",
+        introTitle: "Děláme reklamu, která je dobře vidět, snadno zapamatovatelná a sedí evropským provozovnám.",
+        introText: "Zaměřujeme se na produkty, které jsou čitelné, hezky svítí, vydrží a odpovídají stylu konkrétního oboru. Se zákazníky komunikujeme česky i vietnamsky, rychle přes Facebook a ukazujeme reálná produktová videa před rozhodnutím.",
+        videoKicker: "Facebook Reels",
+        videoTitle: "Video produktů a průběhu výroby",
+        openReels: "Otevřít Reels",
+        contactKicker: "Kontakt",
+        contactTitle: "Chcete reklamu pro svoji provozovnu?",
+        contactText: "Pošlete nám fotku místa, rozměry a představu přes fanpage. Ozveme se s rychlou konzultací.",
+        contactButton: "Napsat na Facebook"
+      },
+      vi: {
+        navVideo: "Sản phẩm mẫu",
+        navContact: "Liên hệ",
+        heroEyebrow: "Thiết kế · sản xuất · thi công biển quảng cáo",
+        heroTitle: "Pismena<span class=\"grad-text hero-3d\">3D</span>.cz",
+        heroByline: "bởi Nhat Tri s.r.o.",
+        heroSubtitle: "Biển hiệu <span class=\"grad-text\">đẹp, sáng, nổi bật</span> cho doanh nghiệp Việt tại châu Âu.",
+        heroLead: "Nhất Trí hỗ trợ chủ nhà hàng, nail salon, potraviny, bistro, cửa hàng và doanh nghiệp Việt tại Cộng hòa Séc và châu Âu: tư vấn ý tưởng, thiết kế, sản xuất, thi công biển chữ nổi 3D, hộp đèn, LED, decal và in ấn.",
+        callButton: "Nhắn qua Facebook",
+        fanpageButton: "Xem fanpage",
+        introKicker: "Giới thiệu ngắn gọn",
+        introTitle: "Làm biển quảng cáo thực tế, dễ nhận diện và phù hợp với mặt bằng kinh doanh tại châu Âu.",
+        introText: "Chúng tôi chú trọng sản phẩm nhìn rõ, sáng đẹp, bền và đúng phong cách từng ngành nghề. Khách hàng có thể làm việc bằng tiếng Việt hoặc tiếng Séc, trao đổi nhanh qua Facebook, xem video sản phẩm thật trước khi quyết định.",
+        videoKicker: "Facebook Reels",
+        videoTitle: "Video sản phẩm & quá trình thi công",
+        openReels: "Mở Reels",
+        contactKicker: "Liên hệ",
+        contactTitle: "Muốn làm biển quảng cáo cho cửa hàng của bạn?",
+        contactText: "Gửi hình mặt bằng, kích thước và ý tưởng qua fanpage để được tư vấn nhanh.",
+        contactButton: "Nhắn qua Facebook"
+      }
+    };
+
+    const langButtons = document.querySelectorAll(".lang-btn");
+    const translatable = document.querySelectorAll("[data-i18n], [data-i18n-html]");
+
+    function setLanguage(lang) {
+      const dict = translations[lang] || translations.cs;
+      document.documentElement.lang = lang;
+      document.title = lang === "vi"
+        ? "Quảng cáo Nhất Trí CZ | Biển quảng cáo Praha & Châu Âu"
+        : "Reklama Nhất Trí CZ | Světelná reklama Praha a Evropa";
+
+      translatable.forEach((element) => {
+        const textKey = element.dataset.i18n;
+        const htmlKey = element.dataset.i18nHtml;
+        if (htmlKey && dict[htmlKey]) {
+          element.innerHTML = dict[htmlKey];
+        } else if (textKey && dict[textKey]) {
+          element.textContent = dict[textKey];
+        }
+      });
+
+      langButtons.forEach((button) => {
+        const active = button.dataset.lang === lang;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      });
+
+      localStorage.setItem("ntLang", lang);
+    }
+
+    langButtons.forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+
+    setLanguage(localStorage.getItem("ntLang") || "cs");
+  </script>
 </body>
 </html>
